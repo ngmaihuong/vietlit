@@ -79,7 +79,7 @@ word_count = word_count[word_count.ct > 4]
 
 # filtering by word
 drop_list = ['người', 'đọc', 'truyện', 'và', 'cần', 'sẽ', 'mình', 'đủ', 'quá', 'là', 'được', 'ạ', 'vì', 'chưa', 'nên', 'sách', 'với', 'việt',  'văn', 'để', 'cũng', 'như', 'k', 'từ', 'nơi', 'cho', 'hơn', 'muốn', 'mọi', 'rất', 'thì', 'ở', 'khá', 'nó', 'vậy', 'mong']
-word_count = word_count.drop(drop_list)
+word_count = word_count.drop(drop_list).reset_index().rename(columns={'index': 'word'})
 
 # exporting list for Tableau
 from pandas import DataFrame
