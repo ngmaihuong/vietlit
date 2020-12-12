@@ -67,9 +67,15 @@ master_string = master_string.translate(str.maketrans('', '', string.punctuation
 master_list = master_string.split()
 master_list = [x.lower() for x in master_list]
 
-# get list of words and counts
+# getting list of words and counts
 from collections import Counter
 word_count = dict(Counter(master_list))
+
+word_count = pd.DataFrame.from_dict(word_count, orient='index')
+word_count = word_count.reset_index().rename(columns={'index': 'word', 0: 'ct'})
+
+# filtering by count
+word_count = word_count[word_count.ct > 5]
 
 # exporting list for Tableau
 from pandas import DataFrame
