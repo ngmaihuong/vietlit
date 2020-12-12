@@ -72,10 +72,14 @@ from collections import Counter
 word_count = dict(Counter(master_list))
 
 word_count = pd.DataFrame.from_dict(word_count, orient='index')
-word_count = word_count.reset_index().rename(columns={'index': 'word', 0: 'ct'})
+word_count = word_count.rename(columns={0: 'ct'})
 
 # filtering by count
-word_count = word_count[word_count.ct > 5]
+word_count = word_count[word_count.ct > 4]
+
+# filtering by word
+drop_list = ['người', 'đọc', 'truyện', 'và', 'cần', 'sẽ', 'mình', 'đủ', 'quá', 'là', 'được', 'ạ', 'vì', 'chưa', 'nên', 'sách', 'với', 'việt',  'văn', 'để', 'cũng', 'như', 'k', 'từ', 'nơi', 'cho', 'hơn', 'muốn', 'mọi', 'rất', 'thì', 'ở', 'khá', 'nó', 'vậy', 'mong']
+word_count = word_count.drop(drop_list)
 
 # exporting list for Tableau
 from pandas import DataFrame
