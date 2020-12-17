@@ -93,6 +93,46 @@ word_count = word_count.rename(columns={0: 'ct'})
 # filtering by count
 word_count = word_count[word_count.ct > 5]
 
+for i in range(len(word_count)):
+    print(word_count.index[i])
+
+# POS tagging
+    
+# =============================================================================
+#     A - Adjective
+#     C - Coordinating conjunction
+#     E - Preposition
+#     I - Interjection
+#     L - Determiner
+#     M - Numeral
+#     N - Common noun
+#     Nc - Noun Classifier
+#     Ny - Noun abbreviation
+#     Np - Proper noun
+#     Nu - Unit noun
+#     P - Pronoun
+#     R - Adverb
+#     S - Subordinating conjunction
+#     T - Auxiliary, modal words
+#     V - Verb
+#     X - Unknown
+#     F - Filtered out (punctuation)
+# =============================================================================
+    
+from underthesea import pos_tag
+
+word_tag = list(word_count.index.values)
+for i in range(len(word_count)):
+    word_tag[i] = pos_tag(word_count.index[i])[0]
+
+key_list = list(word_count.index.values)
+values_list = []
+
+for i in range(len(word_tag)):
+    values_list.append(word_tag[i][1])
+
+word_tag_dict = dict(zip(key_list, values_list))
+
 # =============================================================================
 # # POS tagging
 # from underthesea import pos_tag
