@@ -64,6 +64,46 @@ def prepro(df):
 crit_count = prepro(crit)
 reas_count = prepro(reas)
 
+# playing around with newly found Vietnamese NLP toolkit
+
+#pip install underthesea
+
+master_string = ''
+
+# combining all cells into a paragraph
+for i in range(df1.shape[1]):
+    for j in range(df1.shape[0]):
+        master_string += ' ' + df1.iloc[j, i]
+
+# stripping punctuation
+master_string = master_string.translate(str.maketrans('', '', string.punctuation)).lower()
+
+# importing underthesea NLP
+from underthesea import word_tokenize
+
+# word segmentation
+tokenized_master_string = word_tokenize(master_string)
+
+# getting list of words and counts
+word_count = dict(Counter(tokenized_master_string))
+
+word_count = pd.DataFrame.from_dict(word_count, orient='index')
+word_count = word_count.rename(columns={0: 'ct'})
+
+# filtering by count
+word_count = word_count[word_count.ct > 5]
+
+# =============================================================================
+# # POS tagging
+# from underthesea import pos_tag
+# tagged_master_string = pos_tag(master_string)
+# 
+# # sentiment analysis
+# from underthesea import sentiment
+# for i in range(len(interest)):
+#     interest[i] = sentiment(interest[i])
+# =============================================================================
+
 # =============================================================================
 # # separating the data set into long and short responses
 # long_answer_row = []
