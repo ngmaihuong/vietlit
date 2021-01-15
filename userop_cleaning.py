@@ -152,5 +152,5 @@ word_cloud = pd.merge(word_cloud, word_count, how='left', right_on='index', left
 interest.to_excel('vietlist_user_interest.xlsx', index = True)
 word_cloud.to_excel('vietlit_word_cloud.xlsx', index = True)
 
-# end
+# exit
 
