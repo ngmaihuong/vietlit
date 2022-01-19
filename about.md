@@ -12,9 +12,9 @@ permalink: /about/
 During my time with VietLit, we went through **three** big phases: (1) researching the market and building internal teams, (2) launching and running social media campaigns to build an audience base for our product, and (3) launching and maintaining our product – VietLit website. The team grew from 6 to 40 people divided by functions, our social media presence expanding from Facebook to Instagram and Youtube, our number of organic followers on Facebook (our main promotional channel) growing to 5K+ and our number of website users increasing everyday.
 
 
-<object data="/assets/VietLit-introdeck.pdf" type="application/pdf" width="800px" height="500px">
-    <embed src="/assets/VietLit-introdeck.pdf">
-        <p>This browser does not support PDFs. Please download the PDF to view it: <a href="/assets/VietLit-introdeck.pdf">Download PDF</a>.</p>
+<object data="/vietlit/assets/VietLit-introdeck.pdf" type="application/pdf" width="800px" height="500px">
+    <embed src="/vietlit/assets/VietLit-introdeck.pdf">
+        <p>This browser does not support PDFs. Please download the PDF to view it: <a href="/vietlit/assets/VietLit-introdeck.pdf">Download PDF</a>.</p>
     </embed>
 </object>
 
