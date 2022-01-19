@@ -9,4 +9,4 @@ layout: home
 ---
 # VietLit
 
-VietLit is an online literature platform whose goal is to honor original works by Vietnamese authors and nurture a passionate and supportive community for online Vietnamese literature. Our values include quality, creativity, familiarity, culture and orientation.
+VietLit is an online literature platform whose goal is to honor original works by Vietnamese authors and nurture a passionate and supportive community for online Vietnamese literature. Our values include *quality*, *creativity*, *familiarity*, *culture* and *orientation*.
